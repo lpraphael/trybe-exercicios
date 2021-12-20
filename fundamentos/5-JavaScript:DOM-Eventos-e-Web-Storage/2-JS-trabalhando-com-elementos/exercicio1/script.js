@@ -1,18 +1,33 @@
-let minhaPosicao = document.querySelector('elementoOndeVoceEsta');
+let elementoOndeVoceEsta = document.getElementById('elementoOndeVoceEsta');
 
-const pai = minhaPosicao.parentElement;
+let pai = elementoOndeVoceEsta.parentElement;
 pai.style.color = 'green';
 
-const primeiroFilhodoFilho = minhaPosicao.firstElementChild;
-primeiroFilhodoFilho.innerText = 'primeiro Filho Do Filho';
+const primeiroFilhoDoFilho = elementoOndeVoceEsta.firstElementChild;
+primeiroFilhoDoFilho.innerText = 'primeiro Filho Do Filho';
 
 const primeiroFilho = pai.firstElementChild;
 
-const SegundoFilho = minhaPosicao.previousElementSibling;
+const SegundoFilho = elementoOndeVoceEsta.previousElementSibling;
 
-const texto = minhaPosicao.nextSibling;
+const texto = elementoOndeVoceEsta.nextSibling;
 
-const terceiroFilho = minhaPosicao.nextElementSibling;
+let terceiroFilho = elementoOndeVoceEsta.nextElementSibling;
 
 const terceiroFilho2 = pai.lastElementChild.previousElementSibling;
 
+// criando elemento irmao da elementoOndeVoceEsta
+let irmaoelementoOndeVoceEsta = document.createElement('section');
+pai.appendChild(irmaoelementoOndeVoceEsta);
+
+// criando um filho para elementoOndeVoceEsta
+let filhoelementoOndeVoceEsta = document.createElement('p');
+elementoOndeVoceEsta.appendChild(filhoelementoOndeVoceEsta);
+filhoelementoOndeVoceEsta.innerText = 'enfim to aprendendo';
+// criando um filho do primeiroFilhoDoFilho
+let primeiroFilhoDoFilhoDoFilho = document.createElement('h2');
+primeiroFilhoDoFilho.appendChild( primeiroFilhoDoFilhoDoFilho);
+primeiroFilhoDoFilhoDoFilho.innerText = 'xablau';
+// acessando terceiro filho a partir do primeiroFilhoDoFilhoDoFilho
+terceiroFilho = primeiroFilhoDoFilhoDoFilho.parentElement.parentElement.nextElementSibling;
+console.log(terceiroFilho)
