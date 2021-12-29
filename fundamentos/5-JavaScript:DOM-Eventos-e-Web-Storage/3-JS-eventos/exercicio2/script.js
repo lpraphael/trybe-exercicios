@@ -14,3 +14,69 @@ function createDaysOfTheWeek() {
 createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
+
+const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+
+function diasCalendario(dezDaysList){
+  const dias = document.querySelector('#days');
+
+  for(i = 0; i < dezDaysList.length; i += 1){
+    let dia = dezDaysList[i];
+    let diaCalendario = document.createElement('li');
+    diaCalendario.className = 'day';
+    
+    if(dia === 24 || dia === 31) {
+      diaCalendario.className = 'day holiday';
+      diaCalendario.innerHTML = dia;
+      dias.appendChild(diaCalendario);
+    }else if(dia === 4 || dia === 11 || dia === 18) {
+      diaCalendario.className = 'day friday';
+      diaCalendario.innerHTML = dia;
+      dias.appendChild(diaCalendario);
+    } else if (dia === 25) {
+      diaCalendario.className = 'day holiday friday';
+      diaCalendario.innerHTML = dia;
+      dias.appendChild(diaCalendario);
+    } else {
+      diaCalendario.innerHTML = dia;
+      diaCalendario.className = 'day';
+      dias.appendChild(diaCalendario);
+    }
+  };
+};
+
+diasCalendario(dezDaysList)
+const feriado = 'Feriados'
+function botaoFeriado(feriado){
+  const botaoContainer = document.querySelector('.buttons-container');
+  const feriados = document.createElement('button');
+  botaoContainer.appendChild(feriados);
+  feriados.id = 'btn-holiday';
+  feriados.innerText = feriado;
+}
+
+botaoFeriado(feriado)
+
+function mostrarFeriados(){
+  let btnFeriados = document.querySelector('#btn-holiday');
+  let feriado = document.querySelectorAll('.holiday');
+  let backgroundColor = 'rgb(238,238,238)';
+  let novaCor = 'white';
+  
+  btnFeriados.addEventListener('click', function() {
+    for (let i = 0; i < feriado.length; i += 1) {
+      if (feriado[i].style.backgroundColor === novaCor) {
+        feriado[i].style.backgroundColor = backgroundColor;
+      } else {
+        feriado[i].style.backgroundColor = novaCor;
+      }
+    }
+  });
+}
+
+mostrarFeriados();
+
+
+
+
+
