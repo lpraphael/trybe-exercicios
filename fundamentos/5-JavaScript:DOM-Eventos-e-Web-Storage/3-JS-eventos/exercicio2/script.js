@@ -46,13 +46,15 @@ function diasCalendario(dezDaysList){
 };
 
 diasCalendario(dezDaysList)
+
 const feriado = 'Feriados'
+
 function botaoFeriado(feriado){
   const botaoContainer = document.querySelector('.buttons-container');
   const feriados = document.createElement('button');
   botaoContainer.appendChild(feriados);
   feriados.id = 'btn-holiday';
-  feriados.innerText = feriado;
+  feriados.innerHTML = feriado;
 }
 
 botaoFeriado(feriado)
@@ -76,7 +78,34 @@ function mostrarFeriados(){
 
 mostrarFeriados();
 
+const sexta = 'Sexta-Feira'
 
+function botaoSextou(sexta) {
+  const botaoContainer = document.querySelector('.buttons-container');
+  const sextaFeiras = document.createElement('button');
+  sextaFeiras.id = 'btn-friday';
+  sextaFeiras.innerHTML = sexta;
+  botaoContainer.appendChild(sextaFeiras);
+};
 
+botaoSextou(sexta)
 
+function mostrarSextas(){
+  const btnsextou = document.querySelector('#btn-friday');
+  
+  let sextasFeiras = document.querySelectorAll ('.friday');
+  const sextou = 'SEXTOU! lol'
+  
+  btnsextou.addEventListener('click', function (){
+    for (i = 0; i < sextasFeiras.length; i += 1){
+      let dataSextas = [4, 11, 18, 25];
+      if (sextasFeiras[i].innerHTML !== sextou) {
+        sextasFeiras[i].innerHTML = sextou;
+      } else {
+        sextasFeiras[i].innerHTML = dataSextas[i];
+      }
+    }
+  })
+}
 
+mostrarSextas();
