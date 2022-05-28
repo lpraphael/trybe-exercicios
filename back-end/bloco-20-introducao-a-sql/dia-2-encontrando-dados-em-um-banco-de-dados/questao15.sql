@@ -1,0 +1,2 @@
+-- Escreva uma query que exiba a string "Existem Number cientistas na tabela Scientists.", em que Number se refira a quantidade de cientistas.
+SELECT CONCAT('Existem ', (SELECT COUNT(name) AS Number FROM Scientists.Scientists),' cientistas na tabela Scientists.');
