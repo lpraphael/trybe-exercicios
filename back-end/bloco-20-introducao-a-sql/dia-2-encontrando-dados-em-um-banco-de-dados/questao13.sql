@@ -1,0 +1,1 @@
+-- Escreva uma query para exibir o nome do segundo projeto com menor quantidade de horas.

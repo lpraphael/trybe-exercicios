@@ -1,0 +1,1 @@
+-- Escreva uma query para exibir o nome dos projetos em ordem alfabética descendente.
