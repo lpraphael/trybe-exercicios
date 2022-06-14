@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "questao1": "node questao1.js"
+    "questao1": "node mathOperation.js",
+    "start": "node index.js"
   },
   "author": "Raphael Lyra Perazzo",
   "license": "ISC",

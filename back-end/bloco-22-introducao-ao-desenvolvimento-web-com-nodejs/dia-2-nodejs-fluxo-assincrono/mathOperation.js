@@ -1,6 +1,6 @@
 const readLine = require('readline-sync')
 
-function questao1(num1, num2, num3) {
+function mathOperation(num1, num2, num3) {
 
 const promise = new Promise((resolve, reject) => {
 if(typeof num1 !== 'number' || typeof num2 !== 'number' || typeof num3 !== 'number') {
@@ -15,7 +15,11 @@ resolve(result)
 return promise
 }
 
-questao1(4, 5, 6)
-.then(result => console.log(`sucesso: ${result}`))
-.catch(err => console.log(`erro: ${err.message}`));
+// mathOperation(4, 5, 6)
+// .then(result => console.log(`sucesso: ${result}`))
+// .catch(err => console.log(`erro: ${err.message}`));
+
+module.exports = {
+  mathOperation
+}
 
