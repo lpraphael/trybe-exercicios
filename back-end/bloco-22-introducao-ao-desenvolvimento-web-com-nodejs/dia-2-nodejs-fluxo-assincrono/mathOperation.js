@@ -19,7 +19,23 @@ return promise
 // .then(result => console.log(`sucesso: ${result}`))
 // .catch(err => console.log(`erro: ${err.message}`));
 
+const num1 = Math.floor(Math.random() * 100 + 1);
+const num2 = Math.floor(Math.random() * 100 + 1);
+const num3 = Math.floor(Math.random() * 100 + 1);
+
+async function main () {
+  try {
+    const result = await mathOperation(num1, num2, num3);
+    console.log(`sucesso: ${result}`)
+  } catch(err) {
+    console.log(`Erro: ${err.message}`)
+  }
+}
+
+main();
+
 module.exports = {
-  mathOperation
+  mathOperation,
+  main
 }
 
