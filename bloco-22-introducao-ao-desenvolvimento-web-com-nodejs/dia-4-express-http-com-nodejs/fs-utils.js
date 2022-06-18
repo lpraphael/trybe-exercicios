@@ -1,7 +1,7 @@
 const fs = require('fs/promises');
 
 function getSimpsons() {
-  return fs.readFile('./simpsons.js', 'utf-8')
+  return fs.readFile('./simpsons.json', 'utf-8')
   .then((content) => JSON.parse(content));
 }
 
